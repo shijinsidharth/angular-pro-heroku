@@ -25,6 +25,7 @@ export class DisplaydetailsComponent implements OnInit {
     {
       console.log(i)
       this.pass.deletedata(i).subscribe(result=>{
+        alert(result)
         this.showdata()
       })
     }
