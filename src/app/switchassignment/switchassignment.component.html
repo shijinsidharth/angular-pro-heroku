@@ -1,0 +1,21 @@
+
+<h1>pick a colour</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <select [(ngModel)]="favcolour">
+                <option value="red">RED</option>
+                <option value="green">GREEN</option>
+                <option value="blue">BLUE</option>
+            </select>
+        </div>
+        <div class="col-md-8">
+            <div [(ngSwitch)]="favcolour">
+                <div *ngSwitchCase="'red'" class="content" [style.background-color]="favcolour"><h3>you choosed RED colour</h3></div>
+                <div *ngSwitchCase="'green'" class="content" [style.background-color]="favcolour"><h3>you choosed GREEN colour</h3></div>
+                <div *ngSwitchCase="'blue'" class="content" [style.background-color]="favcolour"><h3>you choosed BLUE colour</h3></div>
+            </div>
+        </div>
+    </div>
+</div>  

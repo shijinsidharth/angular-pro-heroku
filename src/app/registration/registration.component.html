@@ -1,0 +1,43 @@
+<div class="container">
+    <form class="form-horizontal" role="form" action="" method="" (ngSubmit)="insertFn()">
+        <h2>Sign-up</h2>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">First Name</label>
+            <div class="col-sm-12">
+                <input type="text" id="" placeholder="First Name" class="form-control" autofocus name="fname" required [(ngModel)]="res.f_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-12">
+                <input type="text" id="" placeholder="Last Name" class="form-control" autofocus required name="lname" [(ngModel)]="res.l_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <div class="col-sm-12">
+                <input type="date" id="" class="form-control" required name="dob" [(ngModel)]="res.dob">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="gender" value="male" [(ngModel)]="res.gender"> Male
+            <input type="radio" name="gender" value="female" [(ngModel)]="res.gender"> Female
+            <input type="radio" name="gender" value="other" [(ngModel)]="res.gender"> Other
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">Username </label>
+            <div class="col-sm-12">
+                <input type="text" id="" placeholder="email" class="form-control" name="email" required [(ngModel)]="res.email">
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-12">
+                <input type="password" id="" placeholder="Password" class="form-control" name="password" required [(ngModel)]="res.password">
+            </div>
+        </div> -->
+         
+        <button class="btn btn-danger btn-block col-md-4" type="reset">Cancel</button><button type="submit" class="btn btn-primary btn-block col-md-4">Register</button>
+        {{ message }}
+    </form>
+</div>
