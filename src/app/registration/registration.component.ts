@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
   insertFn(){
     this.serve.dataInsert(this.res).subscribe(result=>{
       this.message=result
+      window.location.reload();
     })
   }
 

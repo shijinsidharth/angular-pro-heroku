@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataServiceService} from '../sevices/data-service.service'
+import {DataServiceService} from '../sevices/data-service.service';
+import {Register} from '../registration/registration.model';
 
 @Component({
   selector: 'app-displaydetails',
@@ -30,5 +31,39 @@ export class DisplaydetailsComponent implements OnInit {
       })
     }
   }
+
+  public show:boolean=false;
+    public buttonName:any='Show';
+    upd=new Register()
+
+  updt(){
+    console.log("check")
+    this.pass.update(this.upd).subscribe(result=>{
+    console.log(result)
+    this.showdata()
+    alert(result)
+    window.location.reload();
+    
+  })
+ }
+
+
+
+ dt:any
+ updatedata(asd:any){
+  this.show = true;
+  this.pass.getdata().subscribe(res=>{
+        this.dt=res;
+        console.log(this.dt.length)
+        for (var i = 0; i < this.dt.length; i++) {
+          if (this.dt[i].id == asd) {
+            this.upd=this.dt[i]
+            console.log("upd",this.upd)
+        }
+      }
+ 
+    })
+
+}
 
 }
